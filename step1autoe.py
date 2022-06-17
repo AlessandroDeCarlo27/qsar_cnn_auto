@@ -3,9 +3,10 @@
 Created on Wed Jun 15 12:41:45 2022
 
 @author: AlessandroDeCarlo
+
 """
 
-#%% loading libs
+#%% loading libs 
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
@@ -114,3 +115,6 @@ ax2.legend(framealpha=1)
 
 fig.supxlabel('Epochs')
 fig.savefig('basemodeltraining.png')
+
+
+
