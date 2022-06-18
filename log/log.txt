@@ -1,1 +1,2 @@
 NAME_MODEL	DESCRIPTION	TEST_LOSS	NEPOCHS	COMMENTS	NAME_BEST	NAME_FIG_TR	FOLDER_TR
+basemodel	C2D_t-C2D_t-C2DT_t-C2DT_t-C2DT_t	4.244146111886948e-06	150	Base starting model 24h of training approx. Figure training not avail. Update matplotlib on cluster	basemodel.hdf5	-	baseModel

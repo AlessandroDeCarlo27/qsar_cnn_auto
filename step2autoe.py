@@ -50,7 +50,7 @@ validation_generator = validation_datagen.flow_from_directory(
 )
 #%% load base model
 
-base_model = tf.keras.models.load_model('basemodelInterm.hdf5')
+base_model = tf.keras.models.load_model('bestModels/basemodel.hdf5') #change
 base_model.summary()
 
 #%% define step 2 model
@@ -65,8 +65,8 @@ model2.add(base_model.layers[1])
 model2.layers[1].trainable = False
 # new conv layer
 model2.add(layers.Conv2D(64, (3, 3), activation='relu', padding='same', strides=2,name='conv2D_m2'))
-model2.add(layers.Conv2DTranspose(64, (3, 3), activation='relu', padding='same', strides=2))
-model2.add(layers.Conv2DTranspose(32, (3, 3), activation='relu', padding='same', strides=2))
+model2.add(layers.Conv2DTranspose(64, (3, 3), activation='relu', padding='same', strides=2,name='conv2DT_m2_1'))
+model2.add(layers.Conv2DTranspose(32, (3, 3), activation='relu', padding='same', strides=2,name='conv2DT_m2_2'))
 model2.add(base_model.layers[3])
 model2.layers[5].trainable = False
 model2.add(base_model.layers[4])
@@ -77,7 +77,7 @@ model2.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), loss=loss
 model2.summary()
 #%% launch training
 
-NEPOCHS = 20#200
+NEPOCHS = 10#200
 
 checkpoint = tf.keras.callbacks.ModelCheckpoint(filepath='step2model.hdf5', monitor='val_loss', verbose=1, 
                              save_best_only=True, mode='min', save_weights = False, save_format="tf")
@@ -124,4 +124,4 @@ ax2.set_title('Semilogy Scale')
 ax2.legend(framealpha=1)
 
 fig.supxlabel('Epochs')
-fig.savefig('basemodeltraining.png')
+fig.savefig('step2training.png')

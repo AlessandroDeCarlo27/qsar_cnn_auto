@@ -27,7 +27,7 @@ test_datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 #%% load best model and set values to write within the log file
 nameMod_f = 'basemodel' #name of the model
 nameBest_f = 'basemodel.hdf5' #name of the file with the best model (training)
-nameFigTr_f = 'basemodeltraining.png' #name of the figure with training output
+nameFigTr_f = '-' #name of the figure with training output
 nameFolderTest_f = 'baseModel' 
 #name of the folder with the images obtained applying the model on the test set
 
@@ -45,7 +45,7 @@ model.summary()
 #X_f: freezed layer
 description_f = 'C2D_t-C2D_t-C2DT_t-C2DT_t-C2DT_t' 
 #add eventually some comments
-comments_f = 'Base starting model 24h of training approx.'
+comments_f = 'Base starting model 24h of training approx. Figure training not avail. Update matplotlib on cluster'
 #%% generator for images 
 # test set is very huge, make some plots of the predictions
 test_generator_img = test_datagen.flow_from_directory(
