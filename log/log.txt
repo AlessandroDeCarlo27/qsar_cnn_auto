@@ -1,2 +1,4 @@
 NAME_MODEL	DESCRIPTION	TEST_LOSS	NEPOCHS	COMMENTS	NAME_BEST	NAME_FIG_TR	FOLDER_TR
 basemodel	C2D_t-C2D_t-C2DT_t-C2DT_t-C2DT_t	4.244146111886948e-06	150	Base starting model 24h of training approx. Figure training not avail. Update matplotlib on cluster	basemodel.hdf5	-	baseModel
+step2	C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f	0.00015557394362986088	200	Second step of layerwise training. Try fine tuning	step2model.hdf5	step2training	step2
+step2FT	C2D_ft-C2D_ft-C2D_t-C2DT_t-C2DT_t-C2DT_ft-C2DT_ft	0.00014344841474667192	20	Fine tuning of second step. Another possibility could be to extend fine tuning for more epochs	step2modelFT.hdf5	step2FineTune	step2FT

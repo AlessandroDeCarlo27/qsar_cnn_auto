@@ -25,13 +25,13 @@ BATCH_SIZE = 4
 test_datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 
 #%% load best model and set values to write within the log file
-nameMod_f = 'basemodel' #name of the model
-nameBest_f = 'basemodel.hdf5' #name of the file with the best model (training)
-nameFigTr_f = '-' #name of the figure with training output
-nameFolderTest_f = 'baseModel' 
+nameMod_f = 'step2FT' #name of the model
+nameBest_f = 'step2modelFT.hdf5' #name of the file with the best model (training)
+nameFigTr_f = 'step2FineTune' #name of the figure with training output
+nameFolderTest_f = 'step2FT'
 #name of the folder with the images obtained applying the model on the test set
 
-nepochs_f = str(150) #number of epochs used to train the model
+nepochs_f = str(20) #number of epochs used to train the model
 
 
 
@@ -43,9 +43,9 @@ model.summary()
 #C2DT: transpose convolutional 2d layer
 #X_t: trained layer
 #X_f: freezed layer
-description_f = 'C2D_t-C2D_t-C2DT_t-C2DT_t-C2DT_t' 
+description_f = 'C2D_ft-C2D_ft-C2D_t-C2DT_t-C2DT_t-C2DT_ft-C2DT_ft'
 #add eventually some comments
-comments_f = 'Base starting model 24h of training approx. Figure training not avail. Update matplotlib on cluster'
+comments_f = 'Fine tuning of second step. Another possibility could be to extend fine tuning for more epochs'
 #%% generator for images 
 # test set is very huge, make some plots of the predictions
 test_generator_img = test_datagen.flow_from_directory(
