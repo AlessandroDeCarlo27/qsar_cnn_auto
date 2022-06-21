@@ -97,7 +97,7 @@ sup_lim = np.array(allv).max()
 
 plt.rcParams.update({'font.size': 18})
 fig,(ax1,ax2) = plt.subplots(1,2,figsize=(16,16),sharex=True)
-fig.suptitle('Training of Step2 model')
+fig.suptitle('Training of Step3 model')
 ax1.plot(np.arange(1,NEPOCHS+1),history.history["loss"],
          label="Training Loss",linewidth=3)
 ax1.plot(np.arange(1,NEPOCHS+1),history.history["val_loss"],
