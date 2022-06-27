@@ -3,4 +3,4 @@ basemodel	C2D_t-C2D_t-C2DT_t-C2DT_t-C2DT_t	4.244146111886948e-06	150	Base starti
 step2	C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f	0.00015557394362986088	200	Second step of layerwise training. Try fine tuning	step2model.hdf5	step2training	step2
 step2FT	C2D_ft-C2D_ft-C2D_t-C2DT_t-C2DT_t-C2DT_ft-C2DT_ft	0.00014344841474667192	20	Fine tuning of second step. Another possibility could be to extend fine tuning for more epochs	step2modelFT.hdf5	step2FineTune	step2FT
 step3reduction	C2D_f-C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f-C2DT_f	0.00016116930055432022	194	Killed by cluster at 194/300. Val loss converged. 1.6e-4 @ ep194	step3modelRed.hdf5	-	step3Red
-step4modelRed256	C2D_f-C2D_f-C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f-C2DT_f-C2DT_f	0.0006963057676330209	200	6.9e-4 @200 ep. Maybe to Fine tune.	step4modelRed256.hdf5	-	step4Red256
+step4modelRed256	C2D_f-C2D_f-C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f-C2DT_f-C2DT_f	0.0006963057676330209	200	6.9e-4 @200 ep. Maybe to Fine tune.	step4modelRed256.hdf5	step4modelRed256Train	step4Red256
