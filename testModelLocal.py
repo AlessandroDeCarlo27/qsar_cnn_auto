@@ -25,13 +25,13 @@ BATCH_SIZE = 4
 test_datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 
 #%% load best model and set values to write within the log file
-nameMod_f = 'step3reduction' #name of the model
-nameBest_f = 'step3modelRed.hdf5' #name of the file with the best model (training)
+nameMod_f = 'step4modelRed256' #name of the model
+nameBest_f = 'step4modelRed256.hdf5' #name of the file with the best model (training)
 nameFigTr_f = '-' #name of the figure with training output
-nameFolderTest_f = 'step3Red'
+nameFolderTest_f = 'step4Red256'
 #name of the folder with the images obtained applying the model on the test set
 
-nepochs_f = str(194) #number of epochs used to train the model
+nepochs_f = str(200) #number of epochs used to train the model
 
 
 
@@ -43,9 +43,9 @@ model.summary()
 #C2DT: transpose convolutional 2d layer
 #X_t: trained layer
 #X_f: freezed layer
-description_f = 'C2D_f-C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f-C2DT_f'
+description_f = 'C2D_f-C2D_f-C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f-C2DT_f-C2DT_f'
 #add eventually some comments
-comments_f = 'Killed by cluster at 194/300. Val loss converged. 1.6e-4 @ ep194'
+comments_f = '6.9e-4 @200 ep. Maybe to Fine tune.'
 #%% generator for images 
 # test set is very huge, make some plots of the predictions
 test_generator_img = test_datagen.flow_from_directory(
