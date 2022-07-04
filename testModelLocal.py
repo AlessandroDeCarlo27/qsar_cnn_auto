@@ -26,13 +26,13 @@ BATCH_SIZE = 4
 test_datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 
 #%% load best model and set values to write within the log file
-nameMod_f = 'step4modelRed256' #name of the model
-nameBest_f = 'step4modelRed256.hdf5' #name of the file with the best model (training)
-nameFigTr_f = 'step4modelRed256Train' #name of the figure with training output
-nameFolderTest_f = 'step4Red256'
+nameMod_f = 'step4modelRed256FT' #name of the model
+nameBest_f = 'step4modelRed256FT.hdf5' #name of the file with the best model (training)
+nameFigTr_f = 'step4modelRed256TrainFT' #name of the figure with training output
+nameFolderTest_f = 'step4Red256FT'
 #name of the folder with the images obtained applying the model on the test set
 
-nameLogTrainingFile = 'log_step4modelRed256.csv' #name of the csv with the log of the training procedure
+nameLogTrainingFile = 'log_step4modelRed256FT.csv' #name of the csv with the log of the training procedure
 nepochs_f = str(200) #number of epochs used to train the model
 
 
@@ -45,9 +45,9 @@ model.summary()
 #C2DT: transpose convolutional 2d layer
 #X_t: trained layer
 #X_f: freezed layer
-description_f = 'C2D_f-C2D_f-C2D_f-C2D_f-C2D_t-C2DT_t-C2DT_t-C2DT_f-C2DT_f-C2DT_f-C2DT_f'
+description_f = 'C2D_ft-C2D_ft-C2D_ft-C2D_ft-C2D_ft-C2DT_ft-C2DT_ft-C2DT_ft-C2DT_ft-C2DT_ft-C2DT_ft'
 #add eventually some comments
-comments_f = '6.9e-4 @200 ep. Maybe to Fine tune.'
+comments_f = '6.5e-4 @100 ep. of fine tune. Idea: train the model on a dataset with more molecules with CL, P, S.'
 #%% training output
 
 training_log = pd.read_csv(''.join(['log/',nameLogTrainingFile]))
